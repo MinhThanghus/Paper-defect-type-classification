@@ -7,6 +7,7 @@ import shutil
 import pandas as pd
 from sklearn.model_selection import StratifiedKFold
 from tqdm import tqdm
+# step 2:
 # path =r"E:\data_augmentation_ver_2\orinal_data\train"
 # result_test = "fold_data_original.csv"
 # for filename in os.listdir(path):
@@ -16,15 +17,17 @@ from tqdm import tqdm
 #         with open(result_test, "a", encoding="utf-8", newline="") as f:
 #             writer = csv.writer(f)
 #             writer.writerow(line)
+# step 2:
 N_FOLDS = 5
 MULTI = True
 NUM_FRAMES = 3
 
-df = pd.read_csv(r'E:\dacon_ai\zac-2022\fold_data_original.csv')
+df = pd.read_csv(r'E:\dacon_ai\fold_data_original.csv')
 skf = StratifiedKFold(n_splits=N_FOLDS, shuffle=True, random_state=42)
 for i, (train_idx, val_idx) in enumerate(skf.split(df, df['label'])):
     df.loc[val_idx, 'fold'] = i
 df.to_csv("fold_data.csv")
+# Step 3:
 import os
 import shutil
 import pandas as pd
