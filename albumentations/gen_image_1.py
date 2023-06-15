@@ -29,7 +29,7 @@ transform = A.Compose([
 ])
 
 list_image = []
-for i in tqdm(range(3)):
+for i in tqdm(range(3)):  # range 300 with class have number image least, range 3 with class have number image Most
 
     for gt in os.listdir(annotations):
         img_path = annotations + str("/") + str(gt)
