@@ -28,7 +28,7 @@ transform = A.Compose([
     A.Transpose(p=0.5),
 ])
 
-for i in tqdm(range(3)):
+for i in tqdm(range(3)): range 300 with class have number image least, range 3 with class have number image Most
 
     for gt in os.listdir(annotations):
                 img = cv2.imread(annotations + str("/") + str(gt))
